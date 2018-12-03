@@ -9,6 +9,10 @@ public class WordTranslateBuilder {
 	public WordTranslateBuilder(String word) {
 		this.word = word;
 	}
+	
+	public WordTranslate build() {
+		return new WordTranslate(word, from, to);
+	} 
 
 	public WordTranslateBuilder from(String from) {
 		this.from = from;
@@ -19,10 +23,6 @@ public class WordTranslateBuilder {
 		this.to = to;
 		return build();
 	}
-	
-	public WordTranslate build() {
-		return new WordTranslate(word, from, to);
-	} 
 	
 	public static WordTranslateBuilder word(String word) {
 		return new WordTranslateBuilder(word);
